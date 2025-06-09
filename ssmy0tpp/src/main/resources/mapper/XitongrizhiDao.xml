@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.XitongrizhiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.XitongrizhiEntity" id="xitongrizhiMap">
+        <result property="rizhibiaoti" column="rizhibiaoti"/>
+        <result property="rizhineirong" column="rizhineirong"/>
+        <result property="rizhiriqi" column="rizhiriqi"/>
+        <result property="rizhibeizhu" column="rizhibeizhu"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.XitongrizhiVO" >
+		SELECT * FROM xitongrizhi  xitongrizhi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.XitongrizhiVO" >
+		SELECT  xitongrizhi.* FROM xitongrizhi  xitongrizhi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.XitongrizhiView" >
+
+		SELECT  xitongrizhi.* FROM xitongrizhi  xitongrizhi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.XitongrizhiView" >
+		SELECT * FROM xitongrizhi  xitongrizhi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
